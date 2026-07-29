@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid theme('colors.breath');
+    outline-offset: 2px;
+  }
+}
+
+/* Signature motif: a slow breathing waveline used behind hero copy and
+   as a section divider -- ties every page back to the practice's core
+   differentiator (airway-centered care) without being literal/clipart. */
+.breath-line {
+  stroke: theme('colors.breath');
+  stroke-width: 2;
+  fill: none;
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .breath-animate {
+    animation: breathe 6s ease-in-out infinite;
+  }
+}
+
+@keyframes breathe {
+  0%, 100% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: 40; }
+}
