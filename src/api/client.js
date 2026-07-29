@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_BASE = import.meta.env.VITE_API_BASE || "https://zoning-reflected-prerequisite-fare.trycloudflare.com/api";
+export const API_BASE = import.meta.env.VITE_API_BASE || "https://longest-neighborhood-port-sustained.trycloudflare.com/api";
 
 export const api = axios.create({ baseURL: API_BASE });
 
