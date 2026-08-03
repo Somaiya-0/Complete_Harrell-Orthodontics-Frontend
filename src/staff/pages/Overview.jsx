@@ -6,14 +6,31 @@ import { mockDashboardStats, mockAppointments } from "../../mockData.js";
 export default function Overview() {
   const [stats, setStats] = useState(null);
   const [appointments, setAppointments] = useState([]);
+  const [reloading, setReloading] = useState(false);
 
-  useEffect(() => {
+  const loadData = () => {
     withFallback(() => api.get("/dashboard/stats/"), mockDashboardStats).then(setStats);
     withFallback(() => api.get("/appointments/"), mockAppointments).then(setAppointments);
+  };
+
+  useEffect(() => {
+    loadData();
   }, []);
+
+  const handleReload = async () => {
+    setReloading(true);
+    await Promise.all([
+      withFallback(() => api.get("/dashboard/stats/"), mockDashboardStats).then(setStats),
+      withFallback(() => api.get("/appointments/"), mockAppointments).then(setAppointments),
+    ]);
+    setReloading(false);
+  };
 
   if (!stats) return <div className="p-10">Loading…</div>;
 
+
+  console.log(stats);
+  
   const cards = [
     { label: "Doctors", value: stats.total_doctors },
     { label: "Total Patients", value: stats.total_patients },
@@ -26,8 +43,20 @@ export default function Overview() {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl text-ink mb-1">Overview</h1>
-      <p className="text-ink/50 text-sm mb-8">A snapshot of the practice today.</p>
+      <div className="flex items-start justify-between mb-8">
+        <div>
+          <h1 className="text-2xl text-ink mb-1">Overview</h1>
+          <p className="text-ink/50 text-sm">A snapshot of the practice today.</p>
+        </div>
+        <button
+          onClick={handleReload}
+          disabled={reloading}
+          className="bg-breath text-white rounded-full px-5 py-2 font-medium disabled:opacity-50 flex items-center gap-2"
+        >
+          <span className={reloading ? "animate-spin" : ""}>⟳</span>
+          {reloading ? "Reloading…" : "Reload"}
+        </button>
+      </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
         {cards.map((c) => (
