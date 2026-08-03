@@ -27,6 +27,8 @@ export default function Footer() {
             <li><Link to="/publications">Publications &amp; Lectures</Link></li>
             <li><Link to="/reviews">Reviews</Link></li>
             <li><Link to="/referral-portal">Referring Providers</Link></li>
+
+            <li><link to="/office-portal">Stuff</link></li>
           </ul>
         </div>
         <div>
