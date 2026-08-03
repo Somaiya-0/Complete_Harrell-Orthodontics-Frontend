@@ -7,13 +7,11 @@ const LINKS = [
   { to: "/office-portal/dashboard/doctors", label: "Doctors" },
   { to: "/office-portal/dashboard/patients", label: "Patients" },
   { to: "/office-portal/dashboard/appointments", label: "Appointments" },
-  { to: "/office-portal/dashboard/content", label: "Content" },
   { to: "/office-portal/dashboard/videos", label: "Videos" },
   { to: "/office-portal/dashboard/referrals", label: "Referrals" },
   { to: "/office-portal/dashboard/reviews", label: "Reviews" },
   { to: "/office-portal/dashboard/intake", label: "Intake Forms" },
-  { to: "/office-portal/dashboard/clinical-forms", label: "Clinical Forms" },
-  { to: "/office-portal/dashboard/reports", label: "Reports" },
+ 
 ];
 
 export default function StaffLayout() {

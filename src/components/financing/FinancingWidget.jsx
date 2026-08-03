@@ -25,7 +25,7 @@ export default function FinancingWidget() {
       {primary && (
         <div className="rounded-3xl border-2 border-breath bg-breathlight p-10 text-center relative overflow-hidden">
           <svg className="absolute -left-8 -top-8 w-40 h-40 opacity-10" viewBox="0 0 100 100">
-            <path d="M0 50 Q12 15 25 50 T50 50 T75 50 T100 50" stroke="#2F7A78" strokeWidth="2" fill="none" />
+            <path d="M0 50 Q12 15 25 50 T50 50 T75 50 T100 50" stroke="#4F86FB" strokeWidth="2" fill="none" />
           </svg>
           <p className="text-xs uppercase tracking-widest text-breath font-semibold mb-2 relative">
             Our Primary Financing Partner

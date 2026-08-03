@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Container from "./Container.jsx";
 import Eyebrow from "./Eyebrow.jsx";
 
@@ -41,7 +42,11 @@ export default function Hero({
             : ""
         }`}
       >
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
           {eyebrow && <Eyebrow dark>{eyebrow}</Eyebrow>}
 
           <h1 className="font-display text-3xl md:text-4xl text-white mb-4 max-w-xl">
@@ -55,10 +60,15 @@ export default function Hero({
           )}
 
           {children}
-        </div>
+        </motion.div>
 
         {showImage && image && (
-          <div className="relative mx-auto md:mx-0 w-full max-w-md">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mx-auto md:mx-0 w-full max-w-md"
+          >
             <div className="absolute -inset-3 border border-breath/40 rounded-[28px]" />
 
             <img
@@ -66,7 +76,7 @@ export default function Hero({
               alt={title || "Hero image"}
               className="relative rounded-3xl shadow-lifted w-full h-64 md:h-72 object-cover"
             />
-          </div>
+          </motion.div>
         )}
       </Container>
     </section>

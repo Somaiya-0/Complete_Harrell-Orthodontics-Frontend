@@ -5,8 +5,9 @@ export default {
     extend: {
       colors: {
         ink: "#12233B",       // deep navy -- clinical authority
-        breath: "#2F7A78",    // teal accent -- "airway/breathing" signature
-        breathlight: "#E4F1EF",
+        breath: "#4F86FB",    // brand blue accent -- "airway/breathing" signature
+        breathdark: "#4371D5",// hover/pressed state for the brand blue
+        breathlight: "#EDF2FE",
         clay: "#C0693F",      // warm accent for CTAs (Cherry / financing)
         paper: "#F7F5F1",
         mist: "#EDEBE5",      // hairline borders on paper backgrounds

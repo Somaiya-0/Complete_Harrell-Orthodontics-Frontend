@@ -1,20 +1,57 @@
 import React, { useEffect, useState } from "react";
 import { useApiResource } from "../../api/useApiResource.js";
-import { mockPatients, mockDoctorsForDashboard } from "../../mockData.js";
+import { mockPatients } from "../../mockData.js";
 import Modal from "../components/Modal.jsx";
 import DataTable from "../components/DataTable.jsx";
 import { api } from "../../api/client.js";
 
 
+// const SERVICES = [
+//   "Early Orthodontics, Ages 4-6",
+//   "Orthodontics, Ages 7-11",
+//   "Teen Orthodontics",
+//   "Adult Orthodontics",
+//   "TMJ Disorders",
+//   "Sleep, Breathing & Airway Disorders",
+//   "Myofunctional Therapy",
+//   "Airway Diagnostics",
+// ];
+
+
+
 const SERVICES = [
-  "Early Orthodontics, Ages 4-6",
-  "Orthodontics, Ages 7-11",
-  "Teen Orthodontics",
-  "Adult Orthodontics",
-  "TMJ Disorders",
-  "Sleep, Breathing & Airway Disorders",
-  "Myofunctional Therapy",
-  "Airway Diagnostics",
+  {
+    value: "early_ortho_4_6",
+    label: "Early Orthodontics, Ages 4-6",
+  },
+  {
+    value: "ortho_7_11",
+    label: "Orthodontics, Ages 7-11",
+  },
+  {
+    value: "teen_ortho",
+    label: "Teen Orthodontics",
+  },
+  {
+    value: "adult_ortho",
+    label: "Adult Orthodontics",
+  },
+  {
+    value: "tmj",
+    label: "TMJ Disorders",
+  },
+  {
+    value: "sleep_airway",
+    label: "Sleep, Breathing & Airway Disorders",
+  },
+  {
+    value: "myofunctional",
+    label: "Myofunctional Therapy",
+  },
+  {
+    value: "airway_diagnostics",
+    label: "Airway Diagnostics",
+  },
 ];
 
 
@@ -33,13 +70,28 @@ const EMPTY = {
 
 export default function ManagePatients() {
 
+
+
+  const [doctors, setDoctors] = useState([]);
+
+  useEffect(() => {
+  api.get("/team/")
+    .then((res) => {
+      console.log("TEAM API:", res.data);
+      setDoctors(res.data.results);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}, []);
+
   const {
     items,
     loading,
     create,
     update,
     remove,
-  } = useApiResource("/patients/records/", mockPatients);
+  } = useApiResource("/patients/records/");
 
 
   const [editing, setEditing] = useState(null);
@@ -84,17 +136,13 @@ export default function ManagePatients() {
 
     } catch (err) {
 
-      if (err?.response?.data) {
-        setError(
-          "Unable to save patient. Please check the form fields."
-        );
-      } else {
-        setError(
-          "Something went wrong. Please try again."
-        );
-      }
+  console.log("Backend error:", err.response?.data);
 
-    }
+  setError(
+    JSON.stringify(err.response?.data)
+  );
+
+}
   }
 
 
@@ -432,15 +480,15 @@ export default function ManagePatients() {
 
 
                     {
-                      SERVICES.map(service=>(
-                        <option
-                          key={service}
-                          value={service}
-                        >
-                          {service}
-                        </option>
-                      ))
-                    }
+                    SERVICES.map(service => (
+                      <option
+                        key={service.value}
+                        value={service.value}
+                      >
+                        {service.label}
+                      </option>
+                    ))
+                  }
 
 
                   </select>
@@ -490,15 +538,17 @@ export default function ManagePatients() {
 
 
                     {
-                      mockDoctorsForDashboard.map(d=>(
-                        <option
-                          key={d.id}
-                          value={d.id}
-                        >
-                          {d.name}
-                        </option>
-                      ))
-                    }
+  doctors
+    .filter(d => d.is_doctor)
+    .map(d => (
+      <option
+        key={d.id}
+        value={d.id}
+      >
+        {d.name}
+      </option>
+    ))
+}
 
 
                   </select>

@@ -444,7 +444,6 @@ export const mockTeam = [
   },
 ];
 
-export const mockDoctorsForDashboard = mockTeam.filter((t) => t.is_doctor);
 
 // ---- Videos -------------------------------------------------------------
 // Titles/topics are the client's real listed video assets. We do NOT have
@@ -452,13 +451,10 @@ export const mockDoctorsForDashboard = mockTeam.filter((t) => t.is_doctor);
 // invented -- only the two known subtitle corrections the client flagged
 // are carried as production notes for whoever edits the real subtitles.
 export const mockVideos = [
-  { id: 1, title: "Nasal Breathing -- Dr. Christian Guilleminault (Stanford)", category: "educational", video_url: "#", thumbnail: null, production_note: "Video not yet uploaded by client." },
-  { id: 2, title: "TMJ and Airway", category: "educational", video_url: "#", thumbnail: "/images/video-thumb-tmj-and-airway.png", production_note: "Video not yet uploaded by client (thumbnail provided). Subtitle corrections needed: \"Dr. Harrell\" (not \"Dr. Harold\"); \"Alex City\" (not \"Ellicot\")." },
-  { id: 3, title: "Dr. David McIntosh -- Pediatric ENT, Australia", category: "educational", video_url: "#", thumbnail: null, production_note: "Video not yet uploaded by client." },
-  { id: 4, title: "Patient Testimonials", category: "patient_testimonial", video_url: "#", thumbnail: null, production_note: "Video not yet uploaded by client. Subtitle correction needed: \"Dr. Harrell\" (not \"Dr. Harold\")." },
-  { id: 5, title: "Office Tour", category: "office_tour", video_url: "#", thumbnail: "/images/office-exterior-signage.png", production_note: "Marked \"later\" in the client's outline -- not yet filmed." },
-  { id: 6, title: "Mayo Clinic -- Understanding OSA", category: "educational", video_url: "#", thumbnail: null, production_note: "Third-party reference video, link pending from client." },
-  { id: 7, title: "IACT", category: "educational", video_url: "#", thumbnail: null, production_note: "Referenced repeatedly in client outline; content/link not yet provided." },
+  { id: 1, title: "Scout Treadwell -- Orthodontic Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/A8PYIms1sq0", thumbnail: null },
+  { id: 2, title: "Mary Boos -- TMJ Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/jMvgAnllcww", thumbnail: null },
+  { id: 3, title: "Karen Treadwell -- Former Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/CYk1AdwVWto", thumbnail: null },
+  { id: 4, title: "Patient Testimonial", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/JvXYlGdvuqQ", thumbnail: null },
 ];
 
 // ---- Financing -----------------------------------------------------------
@@ -654,7 +650,6 @@ export const mockAppointments = [];
 export const mockIntakeSubmissions = [];
 export const mockReferrals = [];
 export const mockDashboardStats = {
-  total_doctors: mockDoctorsForDashboard.length,
   total_patients: 0,
   active_patients: 0,
   appointments_today: 0,
