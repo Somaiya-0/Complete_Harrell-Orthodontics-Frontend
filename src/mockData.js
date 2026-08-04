@@ -428,20 +428,20 @@ export const mockTeam = [
   },
   {
     id: 2, name: "Tori", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
-    bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided.",
+    // bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided.",
   },
   {
     id: 3, name: "Jessica", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
-    bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided. (Also the office's patient-forms contact: Jessica.drharrell@gmail.com)",
+    // bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided. (Also the office's patient-forms contact: Jessica.drharrell@gmail.com)",
   },
   {
     id: 4, name: "Haley", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
-    bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided.",
+    // bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided.",
   },
-  {
-    id: 5, name: "Bill III", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
-    bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided.",
-  },
+  // {
+  //   id: 5, name: "Bill III", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
+  //   // bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided.",
+  // },
 ];
 
 
