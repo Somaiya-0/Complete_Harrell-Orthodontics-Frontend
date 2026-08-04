@@ -65,7 +65,7 @@ export default function Technology() {
               subtitle={'A narrow upper jaw means a narrow nasal cavity. Nasal breathing is necessary for normal facial growth and development in children and adults -- narrow jaws lead to crooked teeth and "bad bites." Understanding this relationship, not just the teeth, is what "The Anatomic Truth" means to us.'}
             />
           </div>
-          <img src="/images/scanner-patient-3600.png" alt="CareStream 3600 intraoral scanning in use at our office" className="rounded-3xl shadow-lifted w-full h-72 object-cover" />
+          <img src="/images/dr-harrell-clinical-photo.png" alt="CareStream 3600 intraoral scanning in use at our office" className="rounded-3xl shadow-lifted w-full h-72 object-cover" />
         </div>
       </Section>
 
