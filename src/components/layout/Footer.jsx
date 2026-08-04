@@ -10,7 +10,7 @@ export default function Footer() {
           <p className="text-paper/60">Alexander City &amp; Auburn/Opelika, Alabama</p>
           <p className="mt-3">Office / Text: 256-234-6353</p>
           <p>Emergency line / Text: 256-496-2439</p>
-          <p>Fax: 256-329-4335</p>
+          <p>Fax: 256-392-4335</p>
         </div>
         <div>
           <p className="font-semibold mb-2">Patient Resources</p>

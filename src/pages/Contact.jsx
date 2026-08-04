@@ -35,7 +35,7 @@ export default function Contact() {
           </p>
 
           <p>
-            <strong className="text-ink">Fax:</strong> 256-329-4335
+            <strong className="text-ink">Fax:</strong> 256-392-4335
           </p>
 
           <p>
@@ -125,12 +125,12 @@ export default function Contact() {
         </button>
       </div>
 
-      <p className="text-xs text-ink/40 mt-8">
+      {/* <p className="text-xs text-ink/40 mt-8">
         Note: the practice's own "Physician Written Order" letterhead lists a
         different fax number (256-392-4335) than the one shown above
         (256-329-4335). Both appear in the client's materials. Please confirm
         the correct fax number with Dr. Harrell's office before publishing.
-      </p>
+      </p> */}
     </div>
   );
 }
