@@ -468,7 +468,7 @@ export const mockFinancing = [
   },
   { id: 2, kind: "credit_cards", display_name: "Credit Cards", is_primary: false, tagline: "", learn_more_url: "" },
   { id: 3, kind: "hsa", display_name: "Health Savings Accounts (HSA)", is_primary: false, tagline: "", learn_more_url: "" },
-  { id: 4, kind: "health_financing_direct", display_name: "Health Financing Direct", is_primary: false, tagline: "", learn_more_url: "" },
+  { id: 4, kind: "health_financing_direct", display_name: "Health Financing Direct", is_primary: false, tagline: "", learn_more_url: "https://gohfd.com/" },
   { id: 5, kind: "carecredit", display_name: "CareCredit", is_primary: false, tagline: "", learn_more_url: "https://www.carecredit.com/go/RWH396/" },
 ];
 // Note: OAC (a financing option present in earlier drafts) has been removed per the client's final requirements.

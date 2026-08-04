@@ -13,7 +13,7 @@ export default function Footer() {
           <p>Fax: 256-329-4335</p>
         </div>
         <div>
-          <p className="font-semibold mb-2">Care</p>
+          <p className="font-semibold mb-2">Patient Resources</p>
           <ul className="space-y-1 text-paper/70">
             <li><Link to="/patient-forms">Patient Forms</Link></li>
             <li><Link to="/financing">Financing</Link></li>
@@ -21,7 +21,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <p className="font-semibold mb-2">Practice</p>
+          <p className="font-semibold mb-2">Links</p>
           <ul className="space-y-1 text-paper/70">
             <li><Link to="/team">Meet the Team</Link></li>
             <li><Link to="/publications">Publications &amp; Lectures</Link></li>
