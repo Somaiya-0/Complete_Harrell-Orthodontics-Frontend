@@ -27,7 +27,7 @@ export default function Reviews() {
       <h1 className="text-3xl mb-2 text-ink">Reviews</h1>
       <p className="text-ink/60 mb-8">What our patients are saying.</p>
 
-      <div className="grid gap-4 mb-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
         {reviews.length === 0 && <p className="text-ink/40 text-sm">No published reviews yet.</p>}
         {reviews.map((r) => (
           <div key={r.id} className="bg-white border border-ink/10 rounded-xl p-5">
