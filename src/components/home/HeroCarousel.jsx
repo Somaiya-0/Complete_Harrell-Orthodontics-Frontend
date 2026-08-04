@@ -16,6 +16,12 @@ const SLIDES = [
   },
   
   {
+    image: "/images/trio-system-equipment.jpg",
+    message:
+      "We are the FIRST IN ALABAMA to have 3D CONEBEAM imaging along with 3D facial imaging and 3D intra-oral scanning of the teeth. YES, NO MESSY IMPRESSIONS!",
+    tag: "First in Alabama",
+  },
+  {
     image: "/images/scanner-patient-3600.png",
     message:
       "We treat patients who have Sleep Disordered Breathing issues and are CPAP intolerant. This includes Obstructive Sleep Apnea, Upper Airway Resistance, Snoring, etc.",
@@ -27,12 +33,7 @@ const SLIDES = [
       "We treat patients with TMJ (Jaw) Disorders including jaw pain, clicking/popping, locking, headaches associated with clenching and grinding.",
     tag: "TMJ Care",
   },
-  {
-    image: "/images/trio-system-equipment.png",
-    message:
-      "We are the FIRST IN ALABAMA to have 3D CONEBEAM imaging along with 3D facial imaging and 3D intra-oral scanning of the teeth. YES, NO MESSY IMPRESSIONS!",
-    tag: "First in Alabama",
-  },
+  
 ];
 
 const DURATION = 4000;
