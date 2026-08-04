@@ -44,7 +44,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="bg-white border border-ink/10 rounded-2xl p-6 space-y-2 text-ink/80">
+        {/* <div className="bg-white border border-ink/10 rounded-2xl p-6 space-y-2 text-ink/80">
           <p className="font-display text-lg text-ink mb-2">
             Satellite Office — Opelika
           </p>
@@ -54,7 +54,7 @@ export default function Contact() {
           <p className="text-sm text-ink/50">
             Auburn/Opelika, Alabama area
           </p>
-        </div>
+        </div> */}
       </div>
 
       <div className="bg-white border border-ink/10 rounded-2xl p-6 mb-10">
@@ -69,7 +69,7 @@ export default function Contact() {
                 Monday – Thursday
               </td>
               <td className="py-1.5 text-ink text-right">
-                By Appointment
+                8:00 am - 4:30 pm
               </td>
             </tr>
 

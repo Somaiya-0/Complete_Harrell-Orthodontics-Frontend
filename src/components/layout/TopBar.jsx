@@ -18,10 +18,10 @@ export default function TopBar() {
         <span className="hidden lg:inline text-white/30">|</span>
 
         <a
-          href="mailto:info@drharrell.com"
+          href="mailto:Jessica.drharrell@gmail.com"
           className="hidden md:flex items-center gap-1.5 hover:text-white/80 whitespace-nowrap"
         >
-          <MailIcon /> info@drharrell.com
+          <MailIcon /> Jessica.drharrell@gmail.com
         </a>
 
         <span className="hidden md:inline text-white/30">|</span>
@@ -44,9 +44,9 @@ export default function TopBar() {
       </div>
 
       <div className="flex items-center gap-4 lg:gap-5 shrink-0">
-        <span className="hidden xl:inline whitespace-nowrap">
+        {/* <span className="hidden xl:inline whitespace-nowrap">
           Alexander City &amp; Auburn/Opelika, AL
-        </span>
+        </span> */}
 
         <span className="hidden xl:inline text-white/30">|</span>
 
@@ -57,7 +57,7 @@ export default function TopBar() {
         <span className="hidden lg:inline text-white/30">|</span>
 
         <div className="hidden lg:flex items-center gap-2.5">
-          <a
+          {/* <a
             href="https://www.facebook.com/"
             target="_blank"
             rel="noreferrer"
@@ -65,9 +65,9 @@ export default function TopBar() {
             className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 transition-colors"
           >
             <FacebookIcon />
-          </a>
+          </a> */}
           <a
-            href="https://x.com/"
+            href="https://x.com/DrBillHarrell"
             target="_blank"
             rel="noreferrer"
             aria-label="X"
