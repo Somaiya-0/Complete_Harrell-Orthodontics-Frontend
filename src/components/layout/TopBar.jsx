@@ -8,7 +8,7 @@ export default function TopBar() {
       initial={{ y: -28, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="hidden sm:flex items-center justify-between bg-breath text-white text-xs px-6 lg:px-10 py-2 gap-4"
+      className="hidden sm:flex items-center justify-between bg-blue-700 text-white text-xs px-6 lg:px-10 py-2 gap-4"
     >
       <div className="flex items-center gap-4 lg:gap-5 min-w-0">
         <span className="hidden md:flex items-center gap-1.5 whitespace-nowrap">

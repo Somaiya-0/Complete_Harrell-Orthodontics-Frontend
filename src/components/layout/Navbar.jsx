@@ -59,9 +59,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between px-6 lg:px-10 h-[70px]">
           <Link to="/" className="flex items-center gap-3 shrink-0 group">
             <img
-              src="/images/dr-harrell-signature-logo.png"
+              src="/images/Harrell_logo.png"
               alt="Dr. William Harrell, Jr. DMD"
-              className="h-9 lg:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-10 lg:h-11 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             <span className="hidden sm:block leading-tight border-l border-ink/10 pl-3">
               <span className="block font-display text-[15px] tracking-tight text-ink">Harrell Orthodontics</span>
