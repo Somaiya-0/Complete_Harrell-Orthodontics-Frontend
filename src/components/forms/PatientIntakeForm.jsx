@@ -90,7 +90,7 @@ export default function PatientIntakeForm() {
         </select>
       </label>
       <Field label="Referred by (optional)" value={form.referred_by} onChange={(v) => set("referred_by", v)} />
-      <label className="block">
+      {/* <label className="block">
         <span className="text-sm font-medium text-ink/80">Notes (optional)</span>
         <textarea
           value={form.notes}
@@ -98,7 +98,7 @@ export default function PatientIntakeForm() {
           rows={3}
           className="mt-1 w-full rounded-lg border border-ink/20 px-3 py-2"
         />
-      </label>
+      </label> */}
 
       {status === "error" && (
         <p className="text-sm text-red-500">
