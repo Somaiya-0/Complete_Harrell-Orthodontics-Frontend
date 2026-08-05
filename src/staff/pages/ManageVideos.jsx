@@ -71,14 +71,14 @@ export default function ManageVideos() {
               <span className="text-sm font-medium text-ink/80">Hosted video URL (YouTube/Vimeo) -- optional if uploading a file</span>
               <input value={editing.video_url || ""} onChange={(e) => setEditing((f) => ({ ...f, video_url: e.target.value }))} className="mt-1 w-full rounded-lg border border-ink/20 px-3 py-2" placeholder="https://..." />
             </label>
-            <label className="block">
+            {/* <label className="block">
               <span className="text-sm font-medium text-ink/80">Or upload a video file</span>
               <input type="file" accept="video/*" onChange={(e) => setVideoFile(e.target.files?.[0] || null)} className="mt-1 w-full text-sm" />
             </label>
             <label className="block">
               <span className="text-sm font-medium text-ink/80">Thumbnail image</span>
               <input type="file" accept="image/*" onChange={(e) => setThumbFile(e.target.files?.[0] || null)} className="mt-1 w-full text-sm" />
-            </label>
+            </label> */}
             <label className="block">
               <span className="text-sm font-medium text-ink/80">Caption / transcript text</span>
               <textarea rows={3} value={editing.caption_text || ""} onChange={(e) => setEditing((f) => ({ ...f, caption_text: e.target.value }))} className="mt-1 w-full rounded-lg border border-ink/20 px-3 py-2" />
