@@ -15,13 +15,13 @@ const SLIDES = [
   //   tag: "Recognized",
   // },
   {
-    image: "/images/trio-system-equipment.jpg",
+    image: "/images/trio-system-equipment.png",
     message:
       "First in Alabama with 3D Conebeam and facial imaging, plus 3D intra-oral scanning. No messy impressions.",
     tag: "First in Alabama",
   },
   {
-    image: "/images/harrell_hospital.webp",
+    image: "/images/harrell_hospital.png",
     message:
       "We treat Sleep Disordered Breathing and CPAP intolerance, including Obstructive Sleep Apnea, Upper Airway Resistance, and snoring.",
     tag: "Sleep & Airway",
