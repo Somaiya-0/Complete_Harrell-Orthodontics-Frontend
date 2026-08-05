@@ -172,15 +172,15 @@ export default function ManageReferrals() {
       key: "patient_name",
       label: "Patient",
     },
-    {
-      key: "patient_dob",
-      label: "DOB",
-      render: function (r) {
-        return r.patient_dob
-          ? new Date(r.patient_dob).toLocaleDateString()
-          : "N/A";
-      },
-    },
+    // {
+    //   key: "patient_dob",
+    //   label: "DOB",
+    //   render: function (r) {
+    //     return r.patient_dob
+    //       ? new Date(r.patient_dob).toLocaleDateString()
+    //       : "N/A";
+    //   },
+    // },
     {
       key: "referral_type",
       label: "Type",

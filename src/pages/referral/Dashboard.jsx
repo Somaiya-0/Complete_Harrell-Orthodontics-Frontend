@@ -82,12 +82,12 @@ export default function Dashboard() {
               onChange={(e) => setForm((f) => ({ ...f, patient_name: e.target.value }))}
               className="rounded-lg border border-ink/20 px-3 py-2"
             />
-            <input
+            {/* <input
               type="date"
               value={form.patient_dob || ""}
               onChange={(e) => setForm((f) => ({ ...f, patient_dob: e.target.value }))}
               className="rounded-lg border border-ink/20 px-3 py-2"
-            />
+            /> */}
             <textarea
               placeholder="Notes"
               rows={3}
