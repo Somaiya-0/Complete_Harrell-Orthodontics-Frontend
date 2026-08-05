@@ -36,7 +36,7 @@ export default function ManageVideos() {
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-2xl text-ink">Videos</h1>
-          <p className="text-ink/50 text-sm">Upload, edit, or remove videos shown on the public site (Home preview + full Videos page).</p>
+          {/* <p className="text-ink/50 text-sm">Upload, edit, or remove videos shown on the public site (Home preview + full Videos page).</p> */}
         </div>
         <button onClick={openNew} className="bg-breath text-white rounded-full px-5 py-2 font-medium">+ Add video</button>
       </div>
