@@ -15,7 +15,8 @@ export default function Videos() {
 
   return (
     <div>
-      <Hero eyebrow="Education" title="Videos" subtitle="Educational videos and patient stories from our practice." />
+      {/* "Videos" renamed to "Video Testimonials" per client review 8-10-2026 (#18) */}
+      <Hero eyebrow="Education" title="Video Testimonials" subtitle="Educational videos and patient stories from our practice." />
       <Section>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {videos.map((v) => <VideoCard key={v.id} video={v} />)}

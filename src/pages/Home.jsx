@@ -38,7 +38,9 @@ export default function Home() {
 }, []);
 
   const primaryFinancing = financing.find((f) => f.is_primary) || financing[0];
-  const homeVideos = videos.filter((v) => v.category !== "office_tour").slice(0, 3);
+  // Client review 8-10-2026 (#09): show all 4 videos here, matching the
+  // Videos page -- previously this was cut down to 3.
+  const homeVideos = videos.filter((v) => v.category !== "office_tour");
 
   return (
     <div>
@@ -137,10 +139,11 @@ export default function Home() {
       {homeVideos.length > 0 && (
         <Section>
           <div className="flex items-center justify-between mb-10">
-            <SectionHeader eyebrow="See For Yourself" title="Videos" />
+            {/* "Videos" renamed to "Video Testimonials" per client review 8-10-2026 (#10/#18) */}
+            <SectionHeader eyebrow="See For Yourself" title="Video Testimonials" />
             <Link to="/videos" className="text-breath text-sm font-semibold shrink-0">See all videos &rarr;</Link>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {homeVideos.map((v) => <VideoCard key={v.id} video={v} />)}
           </div>
         </Section>

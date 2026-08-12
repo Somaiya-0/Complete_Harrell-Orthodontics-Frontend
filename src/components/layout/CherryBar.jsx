@@ -94,6 +94,8 @@ export default function CherryBar() {
   const cherry = financing.find((f) => f.kind === "cherry") || financing.find((f) => f.is_primary);
   if (!cherry) return null;
 
+  // Made larger, with a direct link to Cherry itself (not just to the
+  // Financing page), per client review 8-10-2026 (#08).
   return (
     <motion.div
       initial={{ y: -24, opacity: 0 }}
@@ -101,17 +103,32 @@ export default function CherryBar() {
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="bg-ink text-white"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-2 flex items-center justify-center gap-3 text-center flex-wrap">
-        <CherryMark className="w-6 h-6 text-white shrink-0" />
-        <p className="text-[13px] leading-tight">
-          <span className="font-display font-semibold mr-1.5">{cherry.display_name}</span>
-          <span className="text-white/70">{cherry.tagline}</span>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3.5 flex items-center justify-center gap-4 text-center flex-wrap">
+        <a
+          href={cherry.learn_more_url || "https://pay.withcherry.com/harrell-orthodontics"}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-3 shrink-0 hover:opacity-90 transition-opacity"
+        >
+          <CherryMark className="w-9 h-9 text-white shrink-0" />
+          <span className="text-base font-display font-semibold">{cherry.display_name}</span>
+        </a>
+        <p className="text-sm leading-tight text-white/80">
+          {cherry.tagline}
         </p>
+        <a
+          href={cherry.learn_more_url || "https://pay.withcherry.com/harrell-orthodontics"}
+          target="_blank"
+          rel="noreferrer"
+          className="text-sm font-semibold text-breath hover:text-breath/80 underline underline-offset-2 shrink-0 transition-colors"
+        >
+          Apply with Cherry
+        </a>
         <Link
           to="/financing"
-          className="text-[12.5px] font-semibold text-breath hover:text-breath/80 underline underline-offset-2 shrink-0 transition-colors"
+          className="text-xs text-white/60 hover:text-white shrink-0 transition-colors"
         >
-          Learn More
+          More financing options &rarr;
         </Link>
       </div>
     </motion.div>

@@ -22,17 +22,20 @@ export default function FinancingWidget() {
 
   return (
     <div className="grid gap-6">
+      {/* Made larger with a bolder standout color background per client
+          review 8-10-2026 (#20a/#20b) -- previously a light tint with the
+          same size as the cards below it. */}
       {primary && (
-        <div className="rounded-3xl border-2 border-breath bg-breathlight p-10 text-center relative overflow-hidden">
-          <svg className="absolute -left-8 -top-8 w-40 h-40 opacity-10" viewBox="0 0 100 100">
-            <path d="M0 50 Q12 15 25 50 T50 50 T75 50 T100 50" stroke="#4F86FB" strokeWidth="2" fill="none" />
+        <div className="rounded-3xl bg-gradient-to-br from-breath to-blue-700 p-8 sm:p-12 md:p-16 text-center relative overflow-hidden shadow-xl">
+          <svg className="absolute -left-8 -top-8 w-52 h-52 opacity-15" viewBox="0 0 100 100">
+            <path d="M0 50 Q12 15 25 50 T50 50 T75 50 T100 50" stroke="white" strokeWidth="2" fill="none" />
           </svg>
-          <p className="text-xs uppercase tracking-widest text-breath font-semibold mb-2 relative">
+          <p className="text-xs uppercase tracking-widest text-white/80 font-semibold mb-3 relative">
             Our Primary Financing Partner
           </p>
-          <h3 className="font-display text-4xl text-ink mb-2 relative">{primary.display_name}</h3>
-          {primary.tagline && <p className="text-ink/70 mb-8 relative">{primary.tagline}</p>}
-          <Button href={primary.learn_more_url || primary.widget_script_url || "#"} variant="dark" size="lg" className="relative">
+          <h3 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-3 relative break-words">{primary.display_name}</h3>
+          {primary.tagline && <p className="text-white/90 text-lg mb-10 relative">{primary.tagline}</p>}
+          <Button href={primary.learn_more_url || primary.widget_script_url || "#"} variant="light" size="lg" className="relative">
             Learn More
           </Button>
         </div>

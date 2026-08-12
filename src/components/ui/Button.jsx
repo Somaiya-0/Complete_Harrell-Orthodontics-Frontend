@@ -7,6 +7,7 @@ const VARIANTS = {
   outline: "border border-ink/20 text-ink/80 hover:border-ink/40 hover:text-ink",
   outlineLight: "border border-white/25 text-white hover:bg-white/5",
   ghost: "text-breath hover:text-breath/80",
+  light: "bg-white text-breath hover:bg-white/90",
 };
 
 const SIZES = {

@@ -23,7 +23,8 @@ const ICON = (
 export default function WhyChooseUs() {
   return (
     <div>
-      <Hero eyebrow="About Our Practice" title="Why patients and referring providers choose Harrell Orthodontics" subtitle="Four decades of airway-focused, evidence-based orthodontic and TMJ care in Alexander City and Auburn/Opelika, Alabama." />
+      {/* "Auburn/Opelika" removed per client review 8-10-2026 (#11) */}
+      <Hero eyebrow="About Our Practice" title="Why patients and referring providers choose Harrell Orthodontics" subtitle="Four decades of airway-focused, evidence-based orthodontic and TMJ care in Alexander City, Alabama." />
       <Section>
         <SectionHeader eyebrow="Why Choose Us" title="Built on Expertise, Technology & Trust" align="center" className="mx-auto mb-12" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

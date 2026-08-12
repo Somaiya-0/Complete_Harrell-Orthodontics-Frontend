@@ -8,7 +8,7 @@ import TopBar from "./TopBar.jsx";
 import CherryBar from "./CherryBar.jsx";
 
 const STATIC_LINKS = [
-  { to: "/videos", label: "Videos" },
+  { to: "/videos", label: "Videos Testimonials" },
   { to: "/publications", label: "Publications" },
   { to: "/financing", label: "Financing" },
   { to: "/contact", label: "Contact" },
@@ -196,7 +196,9 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <Link to="/reviews" onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">Reviews</Link>
-                <Link to="/referral-portal" onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">Referring Providers</Link>
+                {/* Hidden per client review 8-10-2026 (#22 "REFERRAL PROVIDER
+                    REMOVE THIS") -- portal route kept working, just unlinked. */}
+                {/* <Link to="/referral-portal" onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">Referring Providers</Link> */}
               </nav>
               <div className="px-5 py-4 border-t border-ink/10">
                 <Link

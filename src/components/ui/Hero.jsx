@@ -53,8 +53,13 @@ export default function Hero({
             {title}
           </h1>
 
+          {/* Made larger and switched from low-contrast white/65 to yellow
+              per client review 8-10-2026 (#13a/#13c/#14a-d: "make print
+              larger and the subtitle in YELLOW... hard to read text when
+              zoom in"). This Hero is shared by every content page's
+              banner, so the fix applies everywhere the complaint recurs. */}
           {subtitle && (
-            <p className="text-white/65 max-w-lg leading-relaxed">
+            <p className="text-yellow-300 text-base md:text-lg max-w-lg leading-relaxed font-medium">
               {subtitle}
             </p>
           )}

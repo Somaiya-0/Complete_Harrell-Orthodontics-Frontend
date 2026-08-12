@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import Hero from "../components/ui/Hero.jsx";
 import Section from "../components/ui/Section.jsx";
 import SectionHeader from "../components/ui/SectionHeader.jsx";
 import TeamCard from "../components/ui/TeamCard.jsx";
-import { mockTeam } from "../mockData.js";
+import { mockTeam, mockFeaturedBook } from "../mockData.js";
 
 export default function Team() {
   const team = mockTeam;
@@ -47,6 +48,24 @@ export default function Team() {
               <p className="text-ink/70 leading-relaxed whitespace-pre-line mb-6">
                 {m.bio}
               </p>
+
+              {/* Client review 8-10-2026 (#07): show the book image wherever
+                  the book is mentioned in Dr. Harrell's bio. */}
+              {m.bio?.includes(mockFeaturedBook.title.split(":")[0]) && (
+                <Link
+                  to="/publications"
+                  className="flex items-center gap-4 mb-6 p-4 rounded-2xl border border-ink/10 bg-ink/[0.02] hover:bg-ink/[0.04] transition-colors w-fit"
+                >
+                  <img
+                    src={mockFeaturedBook.cover_image}
+                    alt={mockFeaturedBook.title}
+                    className="w-16 rounded-lg shadow"
+                  />
+                  <span className="text-sm text-breath font-semibold">
+                    See the book on Publications &rarr;
+                  </span>
+                </Link>
+              )}
 
               {m.education && (
                 <div className="border-t border-ink/10 pt-5">

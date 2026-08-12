@@ -59,7 +59,7 @@ export default function App() {
         <Route path="clinical-forms" element={<ManageClinicalForms />} />
         <Route path="intake" element={<IntakeForms />} />
         <Route path="reports" element={<Reports />} />
-        <Route path="referrals" element={<ManageReferrals />} />
+        {/* <Route path="referrals" element={<ManageReferrals />} /> */}
       </Route>
     </Routes>
   );

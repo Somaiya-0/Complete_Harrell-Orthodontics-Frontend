@@ -56,7 +56,10 @@ export const mockNav = [
     order: 4,
     pages: [
       { id: 9, title: "Patient Forms", path: "/patient-forms" },
-      { id: 10, title: "Patient Gallery", path: "/patient-gallery" },
+      // Gallery hidden from nav per client review 8-10-2026 (#17 "GALLERY
+      // DELETE THIS") -- page/route kept, just not linked, per instruction
+      // not to actually delete anything.
+      // { id: 10, title: "Patient Gallery", path: "/patient-gallery" },
       { id: 11, title: "Testimonials / Reviews", path: "/reviews" },
     ],
   },
@@ -246,7 +249,7 @@ export const mockPages = {
       },
       {
         id: 3, kind: "rich_text", heading: "Featured book",
-        body: "Dr. Harrell is the lead editor of an upcoming textbook on pediatric sleep disorders related to altered craniofacial growth, published by Springer, co-edited with Dr. David Gozal, MD (Dean, Joan C. Edwards School of Medicine, Marshall University) and Dr. David McIntosh, MBBS, FRACS, PhD (pediatric ENT, Australia). Note: the client's materials reference this book under two different working titles -- please confirm the final title before publishing.",
+        body: "Dr. Harrell is the lead editor of \"Sleep, Craniofacial Form, and Airway Function Disorders: An Interdisciplinary approach to Assessment, Diagnosis, Management, and Prevention,\" in press with Springer Publishing for 2026-2027, co-edited with Dr. David Gozal, MD (Dean, Joan C. Edwards School of Medicine, Marshall University) and Dr. David McIntosh, MBBS, FRACS, PhD (pediatric ENT, Australia).",
       },
       
     ],
@@ -423,7 +426,7 @@ export const mockTeam = [
     specialty: "Board-Certified Orthodontist (ABO); Certified in Dental Sleep Medicine",
     photo: "/images/dr-harrell-team-photo.jpeg",
     is_doctor: true,
-    bio: "Dr. Harrell is married to Joyce (Jay) Harrell, who is the director of the Infant/Toddler department at Jacob's Ladder. They have two children, including Tatum Harrell.\n\nDr. William (Bill) Harrell is originally from Columbus, GA. He graduated from the University of Alabama in Tuscaloosa with a double major in Chemistry and Math and a minor in Biology, then graduated from the UAB School of Dentistry in Birmingham in 1975 with his Doctor of Dental Medicine (DMD). He completed his orthodontic residency at the University of Pennsylvania School of Dental Medicine in Philadelphia in 1977.\n\nHe is in private orthodontic practice in Alexander City, Alabama and Auburn/Opelika, Alabama, and is a Board-Certified Orthodontist (ABO). Dr. Harrell is the first orthodontic private practice in Alabama to have ConeBeam CT (CBCT) and the first in the USA to combine both ConeBeam CT (CBCT) and 3D facial imaging.\n\nDr. Harrell is presently writing and will be the lead Editor of a textbook, \"Growing into Breathing Problems: The Quest for Collaborative Lifetime Solutions\" (note: the client's Publications section names this same in-press Springer book as \"Sleep, Craniofacial Form, and Airway Function Disorders\" -- both titles appear in the client's own materials; please confirm the final title).\n\nTeaching: Dr. Harrell is a Professor at the University of Alabama at Birmingham, Orthodontic Department, where he teaches and lectures on Cone Beam CT imaging, airway, and TMJ disorders to doctors from all over the world. He publishes scientific articles, chapters, and books on these subjects.",
+    bio: "Dr. Harrell is married to Joyce (Jay) Harrell. They have 2 children, William (Bill) III, and Tatum Harrell Schroeder and 2 grandchildren Will and Sara Tatum Schroeder.\n\nDr. William (Bill) Harrell is originally from Columbus, GA. He graduated from the University of Alabama in Tuscaloosa with a double major in Chemistry and Math and a minor in Biology, then graduated from the UAB School of Dentistry in Birmingham in 1975 with his Doctor of Dental Medicine (DMD). He completed his orthodontic residency at the University of Pennsylvania School of Dental Medicine in Philadelphia in 1977.\n\nHe is in private orthodontic practice in Alexander City, Alabama, and is a Board-Certified Orthodontist (ABO). Dr. Harrell is the first orthodontic private practice in Alabama to have ConeBeam CT (CBCT) and the first in the USA to combine both ConeBeam CT (CBCT) and 3D facial imaging.\n\nDr. Harrell is presently writing and will be the lead Editor of a textbook, \"Sleep, Craniofacial Form, and Airway Function Disorders: An Interdisciplinary approach to Assessment, Diagnosis, Management, and Prevention,\" in press with Springer Publishing for 2026-2027.\n\nTeaching: Dr. Harrell is a Professor at the University of Alabama at Birmingham, Orthodontic Department, where he teaches and lectures on Cone Beam CT imaging, airway, and TMJ disorders to doctors from all over the world. He publishes scientific articles, chapters, and books on these subjects.",
     education: "DMD -- University of Alabama at Birmingham School of Dentistry (1975)\nOrthodontic Residency -- University of Pennsylvania School of Dental Medicine (1977)\nBS, Chemistry & Math (minor Biology) -- University of Alabama, Tuscaloosa",
   },
   {
@@ -438,10 +441,10 @@ export const mockTeam = [
     id: 4, name: "Haley", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
     // bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided.",
   },
-  // {
-  //   id: 5, name: "Bill III", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
-  //   // bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided.",
-  // },
+  {
+    id: 5, name: "Bill III", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
+    // bio: "", education: "", pending_note: "Added to Team page per client review 8-10-2026 -- photo and bio not yet provided.",
+  },
 ];
 
 
@@ -475,13 +478,19 @@ export const mockFinancing = [
 
 // ---- Publications --------------------------------------------------------
 export const mockFeaturedBook = {
-  title: "Sleep, Craniofacial Form, and Airway Function Disorders: An Interdisciplinary Approach to Assessment, Diagnosis, Management, and Prevention",
-  publisher: "Springer Publishing", expected: "2026",
+  title: "Sleep, Craniofacial Form, and Airway Function Disorders: An Interdisciplinary approach to Assessment, Diagnosis, Management, and Prevention",
+  publisher: "Springer Publishing", expected: "2026-2027",
   editors: "William E. Harrell Jr., DMD; David Gozal, MD; David McIntosh, MBBS, FRACS, PhD",
   co_authors: 34, chapters: 44,
   cover_image: "/images/book-cover-harrell-textbook.jpeg",
   cover_note: "Book cover placeholder used until the client's final cover is available.",
-  note: "The client's Team-page bio names this same in-press book \"Growing into Breathing Problems: The Quest for Collaborative Lifetime Solutions\" -- both titles appear in the client's own documents. This section uses the title/details given in the final requirements doc; please confirm with Dr. Harrell before publishing.",
+  // Title confirmed by client review 8-10-2026 -- the earlier working title
+  // and the conflicting-titles note that used to live here are no longer
+  // needed now that Dr. Harrell has confirmed the title above.
+  co_editors_note:
+    "In addition to Dr. Harrell being the main Editor and Co-author of this medical textbook, the two other Co-Editors are:\n\n" +
+    "Dr. David Gozal, MD a pediatric pulmonologist, Dean of the Joan Edwards Medical School at Marshall University. He is the most prolific author in the world on Sleep Disorders, especially in children.\n\n" +
+    "Dr. David McIntosh a world renown pediatric ENT in Australia and has written many books and he and Dr. Harrell have started The Airway Breathing Academy (training.airwaybreathingacademy.com), a platform for parents, patients, and professionals to educate themselves on the importance of airway, breathing, and sleep.",
 };
 
 export const mockBookChapters = [

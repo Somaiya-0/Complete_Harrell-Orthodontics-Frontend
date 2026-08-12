@@ -249,7 +249,7 @@ export default function ContentPage() {
 
 
 
-        {page.forms?.length > 0 && (
+        {/* {page.forms?.length > 0 && (
 
           <div className="mt-12">
 
@@ -279,7 +279,7 @@ export default function ContentPage() {
 
           </div>
 
-        )}
+        )} */}
 
 
       </Section>

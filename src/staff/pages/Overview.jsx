@@ -69,28 +69,30 @@ export default function Overview() {
 
       <div className="bg-white border border-ink/10 rounded-2xl p-6">
         <h2 className="text-lg text-ink mb-4">Today's schedule</h2>
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="text-left text-ink/40 border-b border-ink/10">
-              <th className="pb-2">Time</th>
-              <th className="pb-2">Patient</th>
-              <th className="pb-2">Doctor</th>
-              <th className="pb-2">Reason</th>
-              <th className="pb-2">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {appointments.map((a) => (
-              <tr key={a.id} className="border-b border-ink/5">
-                <td className="py-2">{new Date(a.scheduled_at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</td>
-                <td className="py-2">{a.patient_name}</td>
-                <td className="py-2">{a.doctor_name}</td>
-                <td className="py-2">{a.reason}</td>
-                <td className="py-2 capitalize">{a.status}</td>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[560px] text-sm">
+            <thead>
+              <tr className="text-left text-ink/40 border-b border-ink/10">
+                <th className="pb-2 pr-3">Time</th>
+                <th className="pb-2 pr-3">Patient</th>
+                <th className="pb-2 pr-3">Doctor</th>
+                <th className="pb-2 pr-3">Reason</th>
+                <th className="pb-2">Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {appointments.map((a) => (
+                <tr key={a.id} className="border-b border-ink/5">
+                  <td className="py-2 pr-3 whitespace-nowrap">{new Date(a.scheduled_at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</td>
+                  <td className="py-2 pr-3">{a.patient_name}</td>
+                  <td className="py-2 pr-3">{a.doctor_name}</td>
+                  <td className="py-2 pr-3">{a.reason}</td>
+                  <td className="py-2 capitalize">{a.status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

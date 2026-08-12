@@ -83,7 +83,8 @@ export default function Publications() {
 
       <Hero
         eyebrow="Research & Education"
-        title="Publications, Books & Patents"
+        /* "& Patents" removed from title per client review 8-10-2026 (#19) */
+        title="Publications & Books"
         subtitle="Dr. Harrell's contributions to orthodontic, TMJ, and sleep medicine research and education."
         image="/images/dr-harrell-clinical-photo.png"
       />
@@ -148,29 +149,16 @@ export default function Publications() {
               {mockFeaturedBook.co_authors} co-authors · {mockFeaturedBook.chapters} chapters
             </p>
 
+            {/* Co-editors paragraph added per client review 8-10-2026 (#19) */}
+            {mockFeaturedBook.co_editors_note && (
+              <p className="text-sm text-ink/70 mt-4 whitespace-pre-line leading-relaxed">
+                {mockFeaturedBook.co_editors_note}
+              </p>
+            )}
 
           </div>
 
         </div>
-
-
-
-
-        {/* <p
-          className="
-          text-xs 
-          text-amber-700 
-          bg-amber-50 
-          border 
-          border-amber-200 
-          rounded-lg 
-          px-4 
-          py-3 
-          mb-14
-          "
-        >
-          {mockFeaturedBook.note}
-        </p> */}
 
 
 
@@ -228,8 +216,12 @@ export default function Publications() {
 
         {/* ARTICLES */}
 
+        {/* "Patents" removed from heading and list per client review 8-10-2026
+            (#19: "REMOVE Patents in title AND IN TEXT... leave Articles").
+            Records are only filtered from display here, not deleted from
+            mockData/the database -- see the `kind !== "patent"` filter below. */}
         <h2 className="text-2xl mb-6 text-ink">
-          Articles & Patents
+          Articles
         </h2>
 
 
@@ -237,7 +229,7 @@ export default function Publications() {
 
 
           {
-            pubs.map((p) => (
+            pubs.filter((p) => p.kind !== "patent").map((p) => (
               <li
                 key={p.id}
                 className="border-b border-ink/10 pb-4"

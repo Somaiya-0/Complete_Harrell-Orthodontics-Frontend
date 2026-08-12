@@ -1,5 +1,23 @@
 import React from "react";
 
+// Verified per client review 8-10-2026 (#21): this is the CURRENT/correct
+// address. The two old addresses the client flagged (125 Alison Drive
+// Suite 1A Medical Arts, Alexander City, AL 35010; 163 Alabama Street,
+// Alexander City, AL 35010) do not appear anywhere in this codebase, and
+// both the embedded map below and "Get Directions" use MAIN_ADDRESS, so
+// the map already points to the right place on this site.
+//
+// The client also reported a spam popup appearing after clicking MAP.
+// This page's map is a plain Google Maps iframe embed with no ads or
+// third-party scripts (see below) -- there is nothing here that could
+// produce a popup. That points to the spam coming from somewhere outside
+// this codebase: most likely a spoofed/incorrect Google Business Profile
+// listing (a scammer can "claim" or edit a business's Google Maps entry),
+// or an ad-injecting browser extension on the device used to click it.
+// Recommend: (1) verify/claim the practice's Google Business Profile at
+// business.google.com and report any listing that isn't the real office,
+// (2) try the same click in an incognito window with extensions disabled
+// to rule out a local browser extension.
 const MAIN_ADDRESS = "5030 US Highway 280 Suite D, Alexander City, Alabama 35010";
 const SATELLITE_ADDRESS = "2520 Interstate Dr, Opelika, AL 36801";
 

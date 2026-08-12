@@ -17,15 +17,22 @@ export default function CTA({
       <svg className="absolute inset-0 w-full h-full opacity-[0.06]" preserveAspectRatio="none" viewBox="0 0 800 200">
         <path d="M0 100 Q50 30 100 100 T200 100 T300 100 T400 100 T500 100 T600 100 T700 100 T800 100" stroke="white" strokeWidth="2" fill="none" />
       </svg>
+      {/* Text made larger and higher-contrast per client review 8-10-2026
+          (#12: "heading in Yellow, wording in white and the subscript
+          highlighted in blue... make these easier to read. Do this on all
+          the ones like this") -- this component is reused across every
+          content page's closing CTA. */}
       <div className="relative">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-breath mb-3">{eyebrow}</p>
-        <h2 className="font-display text-2xl md:text-3xl text-white mb-3 max-w-xl mx-auto">{title}</h2>
-        {subtitle && <p className="text-white/60 max-w-lg mx-auto mb-8">{subtitle}</p>}
+        <p className="inline-block text-xs font-bold uppercase tracking-[0.14em] text-blue-100 bg-blue-500/25 border border-blue-400/40 rounded-full px-3 py-1 mb-4">
+          {eyebrow}
+        </p>
+        <h2 className="font-display text-3xl md:text-4xl text-white mb-4 max-w-xl mx-auto">{title}</h2>
+        {subtitle && <p className="text-yellow-300 text-base max-w-lg mx-auto mb-8">{subtitle}</p>}
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Button to={primaryTo} variant="primary" size="lg">{primaryLabel}</Button>
           <Button href={secondaryHref} variant="outlineLight" size="lg">{secondaryLabel}</Button>
         </div>
       </div>
     </div>
-  );
+  ); 
 }
