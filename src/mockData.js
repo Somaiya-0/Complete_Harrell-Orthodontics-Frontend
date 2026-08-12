@@ -35,7 +35,11 @@ export const mockNav = [
     label: "Airway & Sleep",
     order: 2,
     pages: [
-      { id: 5, title: "Myofunctional Therapy & Other Therapies", slug: "myofunctional-therapy" },
+      // Myofunctional Therapy & Other Therapies hidden from nav per client
+      // review 8-12-2026 -- practice doesn't offer this treatment, refers
+      // out instead. Page/route kept, just not linked, per instruction not
+      // to actually delete anything.
+      // { id: 5, title: "Myofunctional Therapy & Other Therapies", slug: "myofunctional-therapy" },
       { id: 6, title: "Sleep, Breathing & Airway Disorders", slug: "sleep-airway-disorders" },
       { id: 7, title: "Airway Diagnostics", slug: "airway-diagnostics" },
       {id: 7.1,title: "Airway Therapies",slug: "airway-therapies"},
@@ -183,7 +187,7 @@ export const mockPages = {
         id: 3, kind: "treatment_cards", heading: "Treatments",
         items: [
           { title: "Braces", body: "Traditional metal or ceramic braces for comprehensive tooth and bite correction." },
-          { title: "Invisible Clear Aligner Therapy", body: "Our leading invisible clear aligner system, for patients who prefer a removable, low-visibility option." },
+          { title: "Clear Aligner Treatment", body: "Our leading clear aligner system, for patients who prefer a removable, low-visibility option." },
           { title: "Non-Extraction Philosophy", body: "Wherever the supporting bone allows, we favor expanding and guiding growth over removing permanent teeth." },
         ],
       },
@@ -207,9 +211,8 @@ export const mockPages = {
         id: 2, kind: "treatment_cards", heading: "Treatments",
         items: [
           { title: "Braces", body: "Traditional fixed braces for comprehensive adult correction." },
-          { title: "Invisible Clear Aligner Therapy", body: "Our leading invisible clear aligner system -- a discreet option for working adults." },
+          { title: "Clear Aligner Treatment", body: "Our leading clear aligner system -- a discreet option for working adults." },
           { title: "Surgical Orthodontics: RPE / MARPE / SARPE", body: "Rapid, mini-implant-assisted, or surgically-assisted palatal expansion for adults whose jaw growth has already completed." },
-          { title: "MMA Surgery", body: "Maxillo-Mandibular Advancement, coordinated with oral/facial surgeons for severe jaw discrepancy or airway-related cases." },
         ],
       },
     ],
@@ -451,13 +454,14 @@ export const mockTeam = [
 // ---- Videos -------------------------------------------------------------
 // Titles/topics are the client's real listed video assets. We do NOT have
 // the actual video files or transcripts, so no caption/testimonial text is
-// invented -- only the two known subtitle corrections the client flagged
-// are carried as production notes for whoever edits the real subtitles.
+// invented. Per client review 8-12-2026: the id 3/4 name labels were
+// swapped (Madison Hamlett's video was captioned "Karen Treadwell", and
+// Karen Treadwell's video just said "Patient Testimonial") -- corrected.
 export const mockVideos = [
   { id: 1, title: "Scout Treadwell -- Orthodontic Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/A8PYIms1sq0", thumbnail: null },
   { id: 2, title: "Mary Boos -- TMJ Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/jMvgAnllcww", thumbnail: null },
-  { id: 3, title: "Karen Treadwell -- Former Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/CYk1AdwVWto", thumbnail: null },
-  { id: 4, title: "Patient Testimonial", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/JvXYlGdvuqQ", thumbnail: null },
+  { id: 3, title: "Madison Hamlett -- Former Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/CYk1AdwVWto", thumbnail: null },
+  { id: 4, title: "Karen Treadwell -- Former Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/JvXYlGdvuqQ", thumbnail: null },
 ];
 
 // ---- Financing -----------------------------------------------------------

@@ -7,7 +7,6 @@ import { mockPages } from "../mockData.js";
 import Hero from "../components/ui/Hero.jsx";
 import Section from "../components/ui/Section.jsx";
 import FeatureCard from "../components/ui/FeatureCard.jsx";
-import FormCard from "../components/ui/FormCard.jsx";
 import CTA from "../components/ui/CTA.jsx";
 
 const TREATMENT_ICON = (
@@ -245,42 +244,6 @@ export default function ContentPage() {
           ))}
 
         </div>
-
-
-
-
-        {/* {page.forms?.length > 0 && (
-
-          <div className="mt-12">
-
-            <h2 className="font-display text-xl mb-4 text-ink">
-              Related Forms
-            </h2>
-
-
-            <div className="
-              grid 
-              sm:grid-cols-2 
-              gap-3
-            ">
-
-              {page.forms.map((f) => (
-
-                <FormCard
-                  key={f.id}
-                  name={f.name}
-                  to={f.to}
-                  note={f.note}
-                />
-
-              ))}
-
-            </div>
-
-          </div>
-
-        )} */}
-
 
       </Section>
 

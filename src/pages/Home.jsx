@@ -14,10 +14,12 @@ const SERVICES = [
   { slug: "orthodontics-ages-4-6", title: "Early Orthodontics, Ages 4-6", blurb: "\"Fix before 6\" -- early evaluation while facial growth is still happening." },
   { slug: "orthodontics-ages-7-11", title: "Orthodontics, Ages 7-11", blurb: "Guided growth before the last baby teeth are gone." },
   { slug: "orthodontics-teens", title: "Teen Orthodontics", blurb: "Comprehensive treatment, focused on non-extraction where possible." },
-  { slug: "orthodontics-adult", title: "Adult Orthodontics", blurb: "Invisible Clear Aligner Therapy and braces, at any age." },
+  { slug: "orthodontics-adult", title: "Adult Orthodontics", blurb: "Clear Aligner Treatment and braces, at any age." },
   { slug: "tmj-disorders", title: "TMJ Disorders", blurb: "Splint therapy, InvisaTMJ\u00A9, and coordinated surgical care." },
   { slug: "sleep-airway-disorders", title: "Sleep, Breathing & Airway Disorders", blurb: "Coordinated care for children and adults with sleep-disordered breathing." },
-  { slug: "myofunctional-therapy", title: "Myofunctional Therapy", blurb: "Retraining the muscles of the face, mouth, and tongue for proper function." },
+  // Myofunctional Therapy teaser removed from homepage per client review
+  // 8-12-2026 -- practice doesn't offer this treatment. See mockNav.
+  // { slug: "myofunctional-therapy", title: "Myofunctional Therapy", blurb: "Retraining the muscles of the face, mouth, and tongue for proper function." },
   { slug: "airway-diagnostics", title: "Airway Diagnostics", blurb: "CBCT, 3D facial imaging, 3D intraoral scanning, and nasal airflow testing -- \"The Anatomic Truth.\"" },
 ];
 
