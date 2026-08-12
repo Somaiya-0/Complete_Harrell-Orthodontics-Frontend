@@ -240,30 +240,27 @@ export default function HeroCarousel() {
 
       {/* Scroll-down button -- client feedback 8-10-2026: visitors didn't
           notice there was more content below the first banner, so this is a
-          real clickable button (not just a subtle hint), visible on every
-          screen size. */}
-      ```jsx
-{/* Scroll-down button */}
-<button
-  type="button"
-  onClick={() =>
-    window.scrollTo({
-      top: window.innerHeight * 0.9,
-      behavior: "smooth",
-    })
-  }
-  aria-label="Scroll down"
-  className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3 px-5 py-2.5 rounded-full bg-ink/70 border border-white/30 text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-ink/85 hover:border-white/50 hover:-translate-y-1"
->
-  <span className="text-xs md:text-sm font-semibold tracking-wide">
-    Scroll Down
-  </span>
+          real clickable button (not just a subtle hint). Hidden on mobile
+          per follow-up feedback. */}
+      <button
+        type="button"
+        onClick={() =>
+          window.scrollTo({
+            top: window.innerHeight * 0.9,
+            behavior: "smooth",
+          })
+        }
+        aria-label="Scroll down"
+        className="hidden sm:flex absolute bottom-16 left-1/2 -translate-x-1/2 z-20 items-center gap-3 px-5 py-2.5 rounded-full bg-ink/70 border border-white/30 text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-ink/85 hover:border-white/50 hover:-translate-y-1"
+      >
+        <span className="text-xs md:text-sm font-semibold tracking-wide">
+          Scroll Down
+        </span>
 
-  <span className="flex items-center justify-center w-7 h-7 rounded-full bg-breath text-white [animation:bounceDown_1.6s_ease-in-out_infinite]">
-    ↓
-  </span>
-</button>
-```
+        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-breath text-white [animation:bounceDown_1.6s_ease-in-out_infinite]">
+          ↓
+        </span>
+      </button>
 
 
       <style>{`
