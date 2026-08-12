@@ -11,7 +11,7 @@ export default function TopBar() {
       className="hidden sm:flex items-center justify-between bg-blue-700 text-white text-xs px-6 lg:px-10 py-2 gap-4"
     >
       <div className="flex items-center gap-4 lg:gap-5 min-w-0">
-        <span className="hidden md:flex items-center gap-1.5 whitespace-nowrap">
+        <span className="hidden lg:flex items-center gap-1.5 whitespace-nowrap">
           <PinIcon /> 5030 US Highway 280 Suite D Alexander City, AL 35010
         </span>
 
@@ -19,12 +19,12 @@ export default function TopBar() {
 
         <a
           href="mailto:Jessica.drharrell@gmail.com"
-          className="hidden md:flex items-center gap-1.5 hover:text-white/80 whitespace-nowrap"
+          className="hidden lg:flex items-center gap-1.5 hover:text-white/80 whitespace-nowrap"
         >
           <MailIcon /> Jessica.drharrell@gmail.com
         </a>
 
-        <span className="hidden md:inline text-white/30">|</span>
+        <span className="hidden lg:inline text-white/30">|</span>
 
         <a
           href="tel:2562346353"

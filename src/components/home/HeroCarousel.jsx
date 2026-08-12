@@ -129,7 +129,7 @@ export default function HeroCarousel() {
       className="relative bg-ink overflow-hidden w-full transition-[aspect-ratio] duration-700 ease-in-out"
       style={{
         aspectRatio: currentRatio,
-        minHeight: 320,
+        minHeight: "clamp(420px, 60vw, 480px)",
         maxHeight: 720,
       }}
     >
@@ -159,6 +159,10 @@ export default function HeroCarousel() {
       {/* Legibility gradients over the photo */}
       <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/55 to-ink/10" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/10" />
+      {/* Extra bottom scrim for the mobile bottom-anchored text (no glass
+          card there to provide contrast on its own), concentrated over the
+          lower third so the rest of the photo stays clear. */}
+      <div className="absolute inset-0 sm:hidden bg-gradient-to-t from-ink/95 via-ink/45 via-35% to-transparent to-70%" />
 
       {/* Signature element: a slow "breathing" pulse behind the glass card */}
       <div
@@ -169,14 +173,18 @@ export default function HeroCarousel() {
         <span className="absolute -translate-x-1/3 -translate-y-1/2 w-[320px] h-[320px] md:w-[440px] md:h-[440px] rounded-full border border-breath/15 [animation:breathe_5s_ease-in-out_infinite] [animation-delay:1.2s]" />
       </div>
 
-      {/* Content */}
-      <div className="relative h-full flex items-center px-6 md:px-16">
+      {/* Content -- on phones the frosted glass card would cover almost the
+          whole photo (little room around it), so text sits directly on the
+          bottom gradient instead, bottom-anchored, leaving the photo fully
+          visible above it. From sm: up there's enough room for the glass
+          card, vertically centered, as before. */}
+      <div className="relative h-full flex items-end sm:items-center px-5 sm:px-6 md:px-16 pb-14 sm:pb-0">
         <div
           key={`text-${index}`}
-          className="w-full max-w-xl rounded-[28px] border border-white/15 bg-white/[0.08] backdrop-blur-xl shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] p-7 md:p-10 animate-[fadeUp_0.6s_ease] transition-transform duration-300 will-change-transform"
+          className="w-full max-w-xl rounded-none sm:rounded-[28px] border-0 sm:border sm:border-white/15 bg-transparent sm:bg-white/[0.08] sm:backdrop-blur-xl shadow-none sm:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] p-0 sm:p-7 md:p-10 animate-[fadeUp_0.6s_ease] transition-transform duration-300 will-change-transform"
           style={{ transform: `translate3d(${cardX}px, ${cardY}px, 0)` }}
         >
-          <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.14em] text-breath bg-breath/10 border border-breath/30 rounded-full px-3 py-1 mb-4">
+          <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.14em] text-breath bg-breath/10 border border-breath/30 rounded-full px-3 py-1 mb-3 sm:mb-4">
             {slide.tag}
           </span>
 
@@ -186,29 +194,21 @@ export default function HeroCarousel() {
             </p>
           )}
 
-          <p
-            className="text-white text-xl md:text-3xl leading-[1.3] font-display mb-7"
-            style={{
-              display: "-webkit-box",
-              WebkitLineClamp: 4,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}
-          >
+          <p className="text-white text-lg sm:text-xl md:text-3xl leading-[1.3] font-display mb-5 sm:mb-7 line-clamp-3 sm:line-clamp-4 [text-shadow:0_2px_12px_rgba(0,0,0,0.5)] sm:[text-shadow:none]">
             {slide.message}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <a
               href="tel:256-234-6353"
-              className="group relative bg-breath text-white px-6 py-3 rounded-full font-semibold overflow-hidden transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-5px_rgba(88,157,246,0.6)]"
+              className="group relative bg-breath text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold overflow-hidden transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-5px_rgba(88,157,246,0.6)]"
             >
               <span className="relative z-10">Call 256-234-6353</span>
             </a>
 
             <Link
               to="/patient-forms"
-              className="border border-white/30 text-white px-6 py-3 rounded-full font-medium backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:border-white/50"
+              className="border border-white/30 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:border-white/50"
             >
               Online Patient Form
             </Link>
