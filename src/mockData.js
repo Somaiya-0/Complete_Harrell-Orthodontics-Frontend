@@ -445,7 +445,7 @@ export const mockTeam = [
     // bio: "", education: "", pending_note: "Named in the client's team list -- photo, title, and bio not yet provided.",
   },
   {
-    id: 5, name: "Bill III", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
+    id: 5, name: "Bill", role_title: "Staff", specialty: "", photo: null, is_doctor: false,
     // bio: "", education: "", pending_note: "Added to Team page per client review 8-10-2026 -- photo and bio not yet provided.",
   },
 ];
