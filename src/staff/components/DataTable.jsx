@@ -3,10 +3,10 @@ import React from "react";
 export default function DataTable({ columns, rows, onEdit, onDelete }) {
   return (
     <div className="bg-white border border-ink/10 rounded-2xl overflow-hidden">
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto overflow-y-auto max-h-[13rem] sm:max-h-none sm:overflow-y-visible">
         <table className="w-full min-w-[640px] text-sm">
           <thead>
-            <tr className="text-left text-ink/40 border-b border-ink/10 bg-ink/[0.02]">
+            <tr className="sticky top-0 text-left text-ink/40 border-b border-ink/10 bg-[#fafafa]">
               {columns.map((c) => <th key={c.key} className="px-4 py-3 font-medium whitespace-nowrap">{c.label}</th>)}
               {(onEdit || onDelete) && <th className="px-4 py-3"></th>}
             </tr>
