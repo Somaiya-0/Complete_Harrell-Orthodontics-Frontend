@@ -59,7 +59,7 @@ export const mockNav = [
     label: "Patient Resources",
     order: 4,
     pages: [
-      { id: 9, title: "Patient Forms", path: "/patient-forms" },
+      { id: 9, title: "New Patient Form", path: "/patient-forms" },
       // Gallery hidden from nav per client review 8-10-2026 (#17 "GALLERY
       // DELETE THIS") -- page/route kept, just not linked, per instruction
       // not to actually delete anything.
@@ -244,7 +244,7 @@ export const mockPages = {
     sections: [
       {
         id: 1, kind: "rich_text", heading: "If you've already had a sleep study",
-        body: "If you or your child has had a sleep study, please fax it to our office, or have your doctor fax the results, or email it to contact@drharrell.com.",
+        body: "If you or your child has had a sleep study, please fax it to our office, or have your doctor fax the results, or email it to Jessica.drharrell@gmail.com.",
       },
       {
         id: 2, kind: "rich_text", heading: "Understanding Sleep Disordered Breathing (SDB)",
@@ -254,7 +254,13 @@ export const mockPages = {
         id: 3, kind: "rich_text", heading: "Featured book",
         body: "Dr. Harrell is the lead editor of \"Sleep, Craniofacial Form, and Airway Function Disorders: An Interdisciplinary approach to Assessment, Diagnosis, Management, and Prevention,\" in press with Springer Publishing for 2026-2027, co-edited with Dr. David Gozal, MD (Dean, Joan C. Edwards School of Medicine, Marshall University) and Dr. David McIntosh, MBBS, FRACS, PhD (pediatric ENT, Australia).",
       },
-      
+      {
+        id: 4, kind: "cta", heading: "Airway Breathing Academy",
+        body: "Co-founder of Airway Breathing Academy",
+        cta_url: "http://www.AirwayBreathingAcademy.com",
+        cta_label: "Visit Airway Breathing Academy →",
+      },
+
     ],
     forms: [
       { id: 1, name: "DW OSA (Child)" }, { id: 2, name: "Child C-GASP", to: "/patient-forms?tab=cgasp" }, { id: 3, name: "SDIS" },
@@ -458,10 +464,10 @@ export const mockTeam = [
 // swapped (Madison Hamlett's video was captioned "Karen Treadwell", and
 // Karen Treadwell's video just said "Patient Testimonial") -- corrected.
 export const mockVideos = [
-  { id: 1, title: "Scout Treadwell -- Orthodontic Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/A8PYIms1sq0", thumbnail: null },
-  { id: 2, title: "Mary Boos -- TMJ Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/jMvgAnllcww", thumbnail: null },
-  { id: 3, title: "Madison Hamlett -- Former Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/CYk1AdwVWto", thumbnail: null },
-  { id: 4, title: "Karen Treadwell -- Former Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/JvXYlGdvuqQ", thumbnail: null },
+  { id: 1, title: "Scout T -- Orthodontic Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/A8PYIms1sq0", thumbnail: null },
+  { id: 2, title: "Mary B -- TMJ Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/jMvgAnllcww", thumbnail: null },
+  { id: 3, title: "Maggie and mom H -- Early Treatment Case", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/CYk1AdwVWto", thumbnail: null },
+  { id: 4, title: "Karen T -- Sleep Patient", category: "patient_testimonial", video_url: "https://www.youtube.com/embed/JvXYlGdvuqQ", thumbnail: null },
 ];
 
 // ---- Financing -----------------------------------------------------------

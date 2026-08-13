@@ -10,6 +10,7 @@ import CherryBar from "./CherryBar.jsx";
 const STATIC_LINKS = [
   { to: "/videos", label: "Videos Testimonials" },
   { to: "/publications", label: "Publications" },
+  { to: "http://www.AirwayBreathingAcademy.com", label: "Airway Breathing Academy", external: true },
   { to: "/financing", label: "Financing" },
   { to: "/contact", label: "Contact" },
 ];
@@ -134,17 +135,29 @@ export default function Navbar() {
 
           <span className="w-px h-4 bg-ink/10 mx-1" />
 
-          {STATIC_LINKS.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              className={({ isActive }) =>
-                `px-3.5 py-2.5 rounded-md hover:bg-ink/[0.04] transition-colors ${isActive ? "text-breath" : "text-ink/75 hover:text-ink"}`
-              }
-            >
-              {l.label}
-            </NavLink>
-          ))}
+          {STATIC_LINKS.map((l) =>
+            l.external ? (
+              <a
+                key={l.to}
+                href={l.to}
+                target="_blank"
+                rel="noreferrer"
+                className="px-3.5 py-2.5 rounded-md hover:bg-ink/[0.04] transition-colors text-ink/75 hover:text-ink"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                className={({ isActive }) =>
+                  `px-3.5 py-2.5 rounded-md hover:bg-ink/[0.04] transition-colors ${isActive ? "text-breath" : "text-ink/75 hover:text-ink"}`
+                }
+              >
+                {l.label}
+              </NavLink>
+            )
+          )}
         </nav>
       </div>
 
@@ -190,11 +203,24 @@ export default function Navbar() {
                   </div>
                 ))}
                 <div className="h-px bg-ink/10 my-3" />
-                {STATIC_LINKS.map((l) => (
-                  <Link key={l.to} to={l.to} onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">
-                    {l.label}
-                  </Link>
-                ))}
+                {STATIC_LINKS.map((l) =>
+                  l.external ? (
+                    <a
+                      key={l.to}
+                      href={l.to}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => setMobileOpen(false)}
+                      className="block py-2 text-ink/80"
+                    >
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link key={l.to} to={l.to} onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">
+                      {l.label}
+                    </Link>
+                  )
+                )}
                 <Link to="/reviews" onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">Reviews</Link>
                 {/* Hidden per client review 8-10-2026 (#22 "REFERRAL PROVIDER
                     REMOVE THIS") -- portal route kept working, just unlinked. */}

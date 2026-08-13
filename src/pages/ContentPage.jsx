@@ -221,20 +221,30 @@ export default function ContentPage() {
 
               {s.kind === "cta" && s.cta_url && (
 
-                <a
-                  href={s.cta_url}
-                  className="
-                    inline-block 
-                    bg-breath 
-                    text-white 
-                    px-6 
-                    py-3 
-                    rounded-pill 
-                    font-semibold
-                  "
-                >
-                  {s.cta_label || "Learn more"}
-                </a>
+                <>
+                  {s.body && (
+                    <p className="text-ink/75 leading-relaxed mb-3">
+                      {s.body}
+                    </p>
+                  )}
+
+                  <a
+                    href={s.cta_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="
+                      inline-block
+                      bg-breath
+                      text-white
+                      px-6
+                      py-3
+                      rounded-pill
+                      font-semibold
+                    "
+                  >
+                    {s.cta_label || "Learn more"}
+                  </a>
+                </>
 
               )}
 
