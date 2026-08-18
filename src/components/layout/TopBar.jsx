@@ -50,9 +50,11 @@ export default function TopBar() {
 
         <span className="hidden xl:inline text-white/30">|</span>
 
-        <Link to="/referral-portal" className="hover:text-white/80 whitespace-nowrap">
+        {/* Referral Portal intentionally unlinked from the public site --
+            portal route (/referral-portal) stays live for direct access. */}
+        {/* <Link to="/referral-portal" className="hover:text-white/80 whitespace-nowrap">
           Referring Providers
-        </Link>
+        </Link> */}
 
         <span className="hidden lg:inline text-white/30">|</span>
 

@@ -42,7 +42,9 @@ export default function Footer() {
             <li><Link to="/team">Meet the Team</Link></li>
             <li><Link to="/publications">Publications &amp; Lectures</Link></li>
             <li><Link to="/reviews">Reviews</Link></li>
-            <li><Link to="/referral-portal">Referring Providers</Link></li>
+            {/* Referral Portal intentionally unlinked from the public site --
+                portal route (/referral-portal) stays live for direct access. */}
+            {/* <li><Link to="/referral-portal">Referring Providers</Link></li> */}
 
             {/* <li><Link to="/office-portal/login">Stuff</Link></li> */}
           </ul>
