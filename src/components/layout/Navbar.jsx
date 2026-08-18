@@ -222,9 +222,7 @@ export default function Navbar() {
                   )
                 )}
                 <Link to="/reviews" onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">Reviews</Link>
-                {/* Hidden per client review 8-10-2026 (#22 "REFERRAL PROVIDER
-                    REMOVE THIS") -- portal route kept working, just unlinked. */}
-                {/* <Link to="/referral-portal" onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">Referring Providers</Link> */}
+                <Link to="/referral-portal" onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">Referring Providers</Link>
               </nav>
               <div className="px-5 py-4 border-t border-ink/10">
                 <Link

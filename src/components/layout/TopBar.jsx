@@ -50,11 +50,9 @@ export default function TopBar() {
 
         <span className="hidden xl:inline text-white/30">|</span>
 
-        {/* Hidden per client review 8-10-2026 (#22 "REFERRAL PROVIDER
-            REMOVE THIS") -- portal route kept working, just unlinked. */}
-        {/* <Link to="/referral-portal" className="hover:text-white/80 whitespace-nowrap">
+        <Link to="/referral-portal" className="hover:text-white/80 whitespace-nowrap">
           Referring Providers
-        </Link> */}
+        </Link>
 
         <span className="hidden lg:inline text-white/30">|</span>
 

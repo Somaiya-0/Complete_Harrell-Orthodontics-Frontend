@@ -42,9 +42,7 @@ export default function Footer() {
             <li><Link to="/team">Meet the Team</Link></li>
             <li><Link to="/publications">Publications &amp; Lectures</Link></li>
             <li><Link to="/reviews">Reviews</Link></li>
-            {/* Hidden per client review 8-10-2026 (#22 "REFERRAL PROVIDER
-                REMOVE THIS") -- portal route kept working, just unlinked. */}
-            {/* <li><Link to="/referral-portal">Referring Providers</Link></li> */}
+            <li><Link to="/referral-portal">Referring Providers</Link></li>
 
             {/* <li><Link to="/office-portal/login">Stuff</Link></li> */}
           </ul>
