@@ -8,7 +8,7 @@ export default function ManageReviews() {
   return (
     <div className="p-8">
       <h1 className="text-2xl text-ink mb-1">Reviews</h1>
-      <p className="text-ink/50 text-sm mb-6">Approve reviews before they appear publicly. Fix spelling by editing here first (edit support coming; delete + re-add for now).</p>
+      <p className="text-ink/50 text-sm mb-6">Approve reviews before they appear publicly.</p>
 
       {loading ? <p>Loading…</p> : (
         <DataTable
