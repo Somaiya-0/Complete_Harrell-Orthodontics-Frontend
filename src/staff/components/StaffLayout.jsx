@@ -4,10 +4,13 @@ import { useAuth } from "../../api/AuthContext.jsx";
 
 const LINKS = [
   { to: "/office-portal/dashboard", label: "Overview", end: true },
-  { to: "/office-portal/dashboard/doctors", label: "Doctors" },
-  { to: "/office-portal/dashboard/patients", label: "Patients" },
-  { to: "/office-portal/dashboard/appointments", label: "Appointments" },
-  { to: "/office-portal/dashboard/videos", label: "Videos" },
+  // Hidden from the staff dashboard nav per client request -- routes/pages
+  // themselves are untouched (still reachable directly) and public-site
+  // functionality (e.g. /videos) is completely separate from this list.
+  // { to: "/office-portal/dashboard/doctors", label: "Doctors" },
+  // { to: "/office-portal/dashboard/patients", label: "Patients" },
+  // { to: "/office-portal/dashboard/appointments", label: "Appointments" },
+  // { to: "/office-portal/dashboard/videos", label: "Videos" },
   { to: "/office-portal/dashboard/referrals", label: "Referrals" },
   { to: "/office-portal/dashboard/reviews", label: "Reviews" },
   { to: "/office-portal/dashboard/intake", label: "Intake Forms" },
