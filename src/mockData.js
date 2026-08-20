@@ -392,12 +392,12 @@ export const mockPages = {
         body: "Our office is the FIRST in ALABAMA to have ConeBeam CT (CBCT) dental 3D X-ray imaging (i-cat.com) -- a very low radiation dose 3D image. Our office is the FIRST in the USA to combine CBCT imaging with true 3D facial imaging (3dmd.com).",
       },
       {
-        id: 3, kind: "rich_text", heading: "Nasal airflow testing",
-        body: "Our office is the FIRST in the USA to also combine nasal resistance testing: 4-Phase High Resolution Rhinomanometry (GM Instruments) to assess nasal resistance and nasal air flow; Acoustic Rhinometry to evaluate the structure of the nasal cavity (GM Instruments); and PNIF -- Peak Nasal Inspiratory Flow -- to measure inspiratory nasal flow (GM Instruments).",
+        id: 3, kind: "rich_text", heading: "Nasal Function Testing",
+        body: "Our office is the FIRST in ALABAMA to also combine nasal resistance testing: 4-Phase High Resolution Rhinomanometry (GM Instruments) to assess nasal resistance and nasal air flow; Acoustic Rhinometry to evaluate the structure of the nasal cavity (GM Instruments); and PNIF -- Peak Nasal Inspiratory Flow -- to measure inspiratory nasal flow (GM Instruments). We were part of the Beta test for DAFNE SCORE, an interpretation software for these 3 measurement devices, and were the FIRST IN THE USA to adopt the DAFNE SCORE.",
       },
       {
         id: 4, kind: "rich_text", heading: "Why nasal airflow matters for orthodontics",
-        body: "The nose and the upper jaw are ONE BONE, and a narrow upper jaw equals a narrow nasal cavity. It is necessary for children and adults to breathe through the nose for normal facial growth and development. Narrow jaws lead to crooked teeth and \"bad bites.\"",
+        body: "The nose and the upper jaw are ONE complex called The Naso-Maxillary Complex of several integrated BONES. Thus, a narrow upper jaw is associated with a narrow nasal cavity. It is necessary for children and adults to breathe through the nose for optimal function and facial growth and development in children. The foundation of narrow jaws can lead to crooked teeth and \"bad bites,\" with a potential to compromise the nasal airway and breathing.",
       },
       {
         id: 5, kind: "rich_text", heading: "No messy impressions",
@@ -552,6 +552,10 @@ export const mockProfessionalTextbooks = [
 //   { id: 9, title: "Putting Sleep Problems to Bed", authors: "Lisa Medalie, David Gozal", cover_image: "/images/reading-putting-sleep-problems-to-bed.jpeg" },
 // ];
 
+// Per client review 8-17-2026: Karen's books should be added at the
+// beginning of this list, in the "Suggested Reading" section on the
+// Publications page. Client has not yet sent titles/authors/covers --
+// do not invent placeholder entries. Add them here once received.
 export const mockSuggestedReading = [
   {
     id: 1,

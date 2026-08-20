@@ -47,7 +47,7 @@ export default function Technology() {
           <FeatureCard icon={ICONS.face} title="3D Facial Imaging">
             First in the USA to combine CBCT with true 3D facial imaging (3dMD), giving a complete picture of facial growth alongside the bite and airway.
           </FeatureCard>
-          <FeatureCard icon={ICONS.nose} title="Nasal Airflow Testing">
+          <FeatureCard icon={ICONS.nose} title="Nasal Function Testing">
             4-Phase High Resolution Rhinomanometry, Acoustic Rhinometry, and PNIF (Peak Nasal Inspiratory Flow) assess nasal resistance and airflow directly.
           </FeatureCard>
           <FeatureCard icon={ICONS.scan} title="Digital Dentistry">
