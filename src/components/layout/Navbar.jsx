@@ -8,6 +8,7 @@ import TopBar from "./TopBar.jsx";
 import CherryBar from "./CherryBar.jsx";
 
 const STATIC_LINKS = [
+  { to: "/reviews", label: "Reviews" },
   { to: "/videos", label: "Videos Testimonials" },
   { to: "/publications", label: "Publications" },
   { to: "http://www.AirwayBreathingAcademy.com", label: "Airway Breathing Academy", external: true },
@@ -27,7 +28,15 @@ export default function Navbar() {
     .then((response) => {
       const data = response?.results ?? response;
 
-      setNav(data?.length ? data : mockNav);
+      // Reviews is its own top-level link (STATIC_LINKS), so drop it from any
+      // dropdown it was nested in, whether the menu came from the API or mockNav.
+      const source = data?.length ? data : mockNav;
+      setNav(
+        source.map((cat) => ({
+          ...cat,
+          pages: cat.pages?.filter((p) => p.path !== "/reviews"),
+        }))
+      );
     });
 }, []);
 
@@ -221,7 +230,6 @@ export default function Navbar() {
                     </Link>
                   )
                 )}
-                <Link to="/reviews" onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">Reviews</Link>
                 {/* Referral Portal intentionally unlinked from the public site --
                     portal route (/referral-portal) stays live for direct access. */}
                 {/* <Link to="/referral-portal" onClick={() => setMobileOpen(false)} className="block py-2 text-ink/80">Referring Providers</Link> */}

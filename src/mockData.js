@@ -64,7 +64,7 @@ export const mockNav = [
       // DELETE THIS") -- page/route kept, just not linked, per instruction
       // not to actually delete anything.
       // { id: 10, title: "Patient Gallery", path: "/patient-gallery" },
-      { id: 11, title: "Testimonials / Reviews", path: "/reviews" },
+      // Reviews moved to its own top-level nav link (see Navbar STATIC_LINKS).
     ],
   },
 ];
