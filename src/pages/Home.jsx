@@ -39,7 +39,9 @@ export default function Home() {
     });
 }, []);
 
-  const primaryFinancing = financing.find((f) => f.is_primary) || financing[0];
+  // Sunbit leads (logo), Cherry follows -- per client request.
+  const sunbit = financing.find((f) => f.kind === "sunbit") || mockFinancing.find((f) => f.kind === "sunbit");
+  const cherry = financing.find((f) => f.kind === "cherry");
   // Client review 8-10-2026 (#09): show all 4 videos here, matching the
   // Videos page -- previously this was cut down to 3.
   const homeVideos = videos.filter((v) => v.category !== "office_tour");
@@ -129,10 +131,34 @@ export default function Home() {
         </div>
       </Section>
 
-      {primaryFinancing && (
+      {sunbit && (
         <Section tight>
           <div className="rounded-3xl border-2 border-breath bg-breathlight p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <SectionHeader eyebrow="Our Primary Financing Partner" title={primaryFinancing.display_name} subtitle={primaryFinancing.tagline} />
+            <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+              <a
+                href={sunbit.learn_more_url}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white rounded-full px-7 py-4 shadow-md shrink-0 hover:opacity-90 transition-opacity"
+              >
+                <img src="/images/Sunbit_logo.svg" alt="Sunbit" className="h-12 md:h-14 w-auto" />
+              </a>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-breath font-semibold mb-1">Our Primary Financing Partner</p>
+                {sunbit.tagline && <p className="text-ink/80">{sunbit.tagline}</p>}
+                {cherry && (
+                  <a
+                    href={cherry.learn_more_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 text-sm text-ink/70 hover:text-ink transition-colors"
+                  >
+                    <img src="/images/Cherry_logo.jpg" alt="" className="w-6 h-6 rounded-full object-cover" />
+                    Also available: <span className="font-semibold">{cherry.display_name}</span>
+                  </a>
+                )}
+              </div>
+            </div>
             <Button to="/financing" variant="dark" size="lg" className="shrink-0">Learn More</Button>
           </div>
         </Section>

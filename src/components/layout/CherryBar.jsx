@@ -91,11 +91,12 @@ export default function CherryBar() {
     );
   }, []);
 
-  const cherry = financing.find((f) => f.kind === "cherry") || financing.find((f) => f.is_primary);
-  if (!cherry) return null;
+  const cherry = financing.find((f) => f.kind === "cherry");
+  const sunbit =
+    financing.find((f) => f.kind === "sunbit") || mockFinancing.find((f) => f.kind === "sunbit");
+  if (!cherry && !sunbit) return null;
 
-  // Made larger, with a direct link to Cherry itself (not just to the
-  // Financing page), per client review 8-10-2026 (#08).
+  // Client request: Sunbit leads (big, first); Cherry follows, smaller.
   return (
     <motion.div
       initial={{ y: -24, opacity: 0 }}
@@ -103,31 +104,50 @@ export default function CherryBar() {
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="bg-ink text-white"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3.5 flex items-center justify-center gap-4 text-center flex-wrap">
-        <a
-          href={cherry.learn_more_url || "https://pay.withcherry.com/harrell-orthodontics"}
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-3 shrink-0 hover:opacity-90 transition-opacity"
-        >
-          <CherryMark className="w-9 h-9 text-white shrink-0" />
-          <span className="text-base font-display font-semibold">{cherry.display_name}</span>
-        </a>
-        <p className="text-sm leading-tight text-white/80">
-          {cherry.tagline}
-        </p>
-        <a
-          href={cherry.learn_more_url || "https://pay.withcherry.com/harrell-orthodontics"}
-          target="_blank"
-          rel="noreferrer"
-          className="text-sm font-semibold text-breath hover:text-breath/80 underline underline-offset-2 shrink-0 transition-colors"
-        >
-          Apply with Cherry
-        </a>
-        <Link
-          to="/financing"
-          className="text-xs text-white/60 hover:text-white shrink-0 transition-colors"
-        >
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3.5 flex items-center justify-center gap-x-6 gap-y-2 text-center flex-wrap">
+        {sunbit && (
+          <div className="flex items-center gap-3 flex-wrap justify-center">
+            <a
+              href={sunbit.learn_more_url}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-white rounded-full px-4 py-1.5 flex items-center hover:opacity-90 transition-opacity shrink-0"
+            >
+              <img src="/images/Sunbit_logo.svg" alt="Sunbit" className="h-8 w-auto" />
+            </a>
+            <p className="text-sm leading-tight text-white/90">{sunbit.tagline}</p>
+            <a
+              href={sunbit.learn_more_url}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-semibold bg-white text-ink rounded-full px-4 py-1.5 hover:bg-white/90 transition-colors shrink-0"
+            >
+              Apply with Sunbit
+            </a>
+          </div>
+        )}
+        {cherry && (
+          <div className="flex items-center gap-2 text-xs">
+            <a
+              href={cherry.learn_more_url}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1.5 hover:opacity-90 transition-opacity"
+            >
+              <CherryMark className="w-5 h-5 shrink-0" />
+              <span className="font-display font-semibold">{cherry.display_name}</span>
+            </a>
+            <a
+              href={cherry.learn_more_url}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-breath hover:text-breath/80 underline underline-offset-2 transition-colors"
+            >
+              Apply with Cherry
+            </a>
+          </div>
+        )}
+        <Link to="/financing" className="text-xs text-white/60 hover:text-white shrink-0 transition-colors">
           More financing options &rarr;
         </Link>
       </div>

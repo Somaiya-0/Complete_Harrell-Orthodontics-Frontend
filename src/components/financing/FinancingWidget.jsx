@@ -17,26 +17,44 @@ export default function FinancingWidget() {
 });
   }, []);
 
-  const primary = options.find((o) => o.is_primary) || options[0];
-  const rest = options.filter((o) => o !== primary);
+  // Sunbit = first, big banner. Cherry = second, about half the size.
+  // If the live API doesn't return Sunbit yet, fall back to the mock entry.
+  const all = options.some((o) => o.kind === "sunbit")
+    ? options
+    : [...options, ...mockFinancing.filter((o) => o.kind === "sunbit")];
+  const sunbit = all.find((o) => o.kind === "sunbit");
+  const cherry = all.find((o) => o.kind === "cherry");
+  const rest = all.filter((o) => o !== sunbit && o !== cherry);
 
   return (
     <div className="grid gap-6">
-      {/* Made larger with a bolder standout color background per client
-          review 8-10-2026 (#20a/#20b) -- previously a light tint with the
-          same size as the cards below it. */}
-      {primary && (
-        <div className="rounded-3xl bg-gradient-to-br from-breath to-blue-700 p-8 sm:p-12 md:p-16 text-center relative overflow-hidden shadow-xl">
-          <svg className="absolute -left-8 -top-8 w-52 h-52 opacity-15" viewBox="0 0 100 100">
+      {sunbit && (
+        <div className="rounded-3xl bg-gradient-to-br from-teal-500 to-emerald-700 p-8 sm:p-12 md:p-16 text-center relative overflow-hidden shadow-xl">
+          <svg className="absolute -right-8 -bottom-8 w-52 h-52 opacity-15" viewBox="0 0 100 100">
             <path d="M0 50 Q12 15 25 50 T50 50 T75 50 T100 50" stroke="white" strokeWidth="2" fill="none" />
           </svg>
           <p className="text-xs uppercase tracking-widest text-white/80 font-semibold mb-3 relative">
             Our Primary Financing Partner
           </p>
-          <h3 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-3 relative break-words">{primary.display_name}</h3>
-          {primary.tagline && <p className="text-white/90 text-lg mb-10 relative">{primary.tagline}</p>}
-          <Button href={primary.learn_more_url || primary.widget_script_url || "#"} variant="light" size="lg" className="relative">
-            Learn More
+          <h3 className="relative mb-5 flex justify-center">
+            <span className="sr-only">{sunbit.display_name}</span>
+            <span className="bg-white rounded-full px-8 py-4 sm:px-10 sm:py-5 shadow-md inline-flex">
+              <img src="/images/Sunbit_logo.svg" alt="" className="h-14 sm:h-20 md:h-24 w-auto" />
+            </span>
+          </h3>
+          {sunbit.tagline && <p className="text-white/90 text-lg mb-10 relative">{sunbit.tagline}</p>}
+          <Button href={sunbit.learn_more_url || "#"} variant="light" size="lg" className="relative">
+            Apply with Sunbit
+          </Button>
+        </div>
+      )}
+
+      {cherry && (
+        <div className="rounded-3xl bg-gradient-to-br from-breath to-blue-700 p-5 sm:p-7 md:p-8 text-center relative overflow-hidden shadow-lg">
+          <h3 className="font-display text-2xl sm:text-3xl text-white mb-1.5 relative break-words">{cherry.display_name}</h3>
+          {cherry.tagline && <p className="text-white/90 text-sm mb-5 relative">{cherry.tagline}</p>}
+          <Button href={cherry.learn_more_url || "#"} variant="light" className="relative">
+            Apply with Cherry
           </Button>
         </div>
       )}

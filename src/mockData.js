@@ -475,9 +475,15 @@ export const mockVideos = [
 // client's actual widget copy; no invented taglines for the others.
 export const mockFinancing = [
   {
-    id: 1, kind: "cherry", display_name: "Cherry", is_primary: true,
+    id: 1, kind: "cherry", display_name: "Cherry", is_primary: false, is_featured: true,
     tagline: "Buy Now, Pay Later -- monthly payments designed for you.",
     learn_more_url: "https://pay.withcherry.com/harrell-orthodontics",
+  },
+  // Sunbit is the lead partner (first/largest); Cherry is second, ~half size.
+  {
+    id: 6, kind: "sunbit", display_name: "Sunbit", is_primary: true, is_featured: true,
+    tagline: "Quick, easy financing -- apply in minutes.",
+    learn_more_url: "https://apply.sunbit.com/HarrellOrthodontics",
   },
   { id: 2, kind: "credit_cards", display_name: "Credit Cards", is_primary: false, tagline: "", learn_more_url: "" },
   { id: 3, kind: "hsa", display_name: "Health Savings Accounts (HSA)", is_primary: false, tagline: "", learn_more_url: "" },
